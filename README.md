@@ -17,3 +17,4 @@
     - **Git & Github**
 
 ## JSP 관련 정보
+https://shw0331.notion.site/Java-Project-e916b17c0f7b415887cf477534b1f22c
