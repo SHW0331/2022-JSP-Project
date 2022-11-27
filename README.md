@@ -12,7 +12,7 @@
 - **Back - End**
     - ??
 - **Database**
-    - **Oracle**
+    - **Oracle, MySQL**
 - **Version Control**
     - **Git & Github**
 
