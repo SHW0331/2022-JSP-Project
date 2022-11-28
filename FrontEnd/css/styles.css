@@ -10,6 +10,15 @@
 
 @import "./components/index.css";
 @import "./components/index-search.css";
+@import "./components/team.css";
+@import "./components/teamInfo.css";
+@import "./components/team-table.css";
+@import "./components/player.css";
+@import "./components/player-table.css";
+@import "./components/playerInfo.css";
+@import "./components/";
+
+@import "./components/login.css";
 
 /* Screens */
 
