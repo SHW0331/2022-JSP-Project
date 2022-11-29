@@ -13,6 +13,17 @@
 </head>
 
 <body>
+	<%
+	String userID = null;
+	if (session.getAttribute("userID") != null) {
+		userID = (String) session.getAttribute("userID");
+	} else {
+	%>
+
+	<%
+	}
+	%>
+
 	<div class="top-bar">
 		<div class="top-bar__logo">
 			<a href="index.jsp"> <img class="top-bar__logo__svg"
@@ -21,11 +32,22 @@
 		</div>
 		<div class="top-bar__login">
 			<div class="top-bar__login__column">
-				<span class="top-bar__login__column__right"> <a
-					href="myInfo.jsp">내정보</a>
+				<%
+				if (userID == null) {
+				%>
 				</span> <span class="top-bar__login__column__left"> <a
-					href="login.jsp">login</a>
+					href="login.jsp">로그인</a>
 				</span>
+
+				<%
+				} else {
+				%>
+				<span class="top-bar__login__column__left"> <a
+					href="myInfo.jsp">내정보</a> <span
+					class="top-bar__login__column__right"> <a
+						href="logoutAction.jsp">로그아웃</a> <%
+ }
+ %>
 			</div>
 		</div>
 	</div>
@@ -55,14 +77,16 @@
 				<div class="container__form container--signup">
 					<form action="joinAction.jsp" method="post" class="form">
 						<h2 class="form__title">회원가입</h2>
-          <input type="text" placeholder="ID" class="input" name="userID"/> 
-          <input type="password" placeholder="Password" class="input" name="userPassword"/>
-          <input type="text" placeholder="Name" class="input" name="userName"/> 
-          <label class="form__label" active>
-            <input type="radio" value="남자" checked class="input" name="userGender" autocomplete="off"/>M
-            <input type="radio" value="여자" class="input" name="userGender" autocomplete="off"/>W
-          </label>
-          <input type="text" placeholder="Email" class="input" name="userEmail"/> 
+						<input type="text" placeholder="ID" class="input" name="userID" />
+						<input type="password" placeholder="Password" class="input"
+							name="userPassword" /> <input type="text" placeholder="Name"
+							class="input" name="userName" /> <label class="form__label"
+							active> <input type="radio" value="남자" checked
+							class="input" name="userGender" autocomplete="off" />M <input
+							type="radio" value="여자" class="input" name="userGender"
+							autocomplete="off" />W
+						</label> <input type="text" placeholder="Email" class="input"
+							name="userEmail" />
 						<button class="btn">회원가입</button>
 					</form>
 				</div>
@@ -97,7 +121,7 @@
 
 
 	<footer class="bottom-bar">
-		<a href="test.jsp"> <img src="./css/img/foot_logo.png"
+		<a href="index.jsp"> <img src="./css/img/foot_logo.png"
 			alt="K리그 투명로고">
 		</a>
 	</footer>

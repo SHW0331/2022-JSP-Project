@@ -13,6 +13,20 @@
 </head>
 
 <body>
+	<%
+	String userID = null;
+	if (session.getAttribute("userID") != null) {
+		userID = (String) session.getAttribute("userID");
+	} else {
+	%>
+	<script>
+		alert("로그인이 필요합니다.")
+		location.href = 'login.jsp';
+	</script>
+	<%
+	}
+	%>
+
 	<div class="top-bar">
 		<div class="top-bar__logo">
 			<a href="index.jsp"> <img class="top-bar__logo__svg"
@@ -21,11 +35,22 @@
 		</div>
 		<div class="top-bar__login">
 			<div class="top-bar__login__column">
-				<span class="top-bar__login__column__right"> <a
-					href="myInfo.jsp">내정보</a>
+				<%
+				if (userID == null) {
+				%>
 				</span> <span class="top-bar__login__column__left"> <a
-					href="login.jsp">login</a>
+					href="login.jsp">로그인</a>
 				</span>
+
+				<%
+				} else {
+				%>
+				<span class="top-bar__login__column__left"> <a
+					href="myInfo.jsp">내정보</a> <span
+					class="top-bar__login__column__right"> <a
+						href="logoutAction.jsp">로그아웃</a> <%
+ }
+ %>
 			</div>
 		</div>
 	</div>
@@ -88,13 +113,18 @@
 				</tbody>
 
 			</table>
+			<div class="page__bottom">
+				<span><a href="#">1</a></span> <span><a href="#">2</a></span> <span><a
+					href="#">3</a></span> <span><a href="#">4</a></span> <span><a
+					href="#">5</a></span> <span><a href="">글쓰기</a></span>
+			</div>
 		</div>
 	</div>
 
 
 
 	<footer class="bottom-bar">
-		<a href="test.jsp"> <img src="./css/img/foot_logo.png"
+		<a href="index.jsp"> <img src="./css/img/foot_logo.png"
 			alt="K리그 투명로고">
 		</a>
 	</footer>

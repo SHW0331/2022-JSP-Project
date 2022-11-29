@@ -19,6 +19,8 @@
 @import "./components/board.css";
 
 @import "./components/login.css";
+@import "./components/board-table.css";
+@import "./components/page-bottom.css";
 
 /* Screens */
 

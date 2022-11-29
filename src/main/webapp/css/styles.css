@@ -17,9 +17,10 @@
 @import "./components/player-table.css";
 @import "./components/playerInfo.css";
 @import "./components/board.css";
+@import "./components/board-table.css";
 
 @import "./components/login.css";
-
+@import "./components/page-bottom.css";
 /* Screens */
 
 

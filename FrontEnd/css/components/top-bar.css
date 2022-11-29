@@ -38,10 +38,16 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    margin-right: 5%;
+    margin-left: 60%;
 }
 
 .top-bar__login__column__left {
-    margin-left: 5%;
-    font-weight: 200;
+    width: 50%;
+    font-weight: 600;
+}
+
+.top-bar__login__column__right {
+    width: 50%;
+    margin-left: 10%;
+    font-weight: 600;
 }
