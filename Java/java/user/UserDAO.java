@@ -18,8 +18,8 @@ public class UserDAO {
 			String dbPORT = "3306";
 			String dbNAME = "league";
 			String TIMEZONE = "serverTimezone=UTC";
-			String dbURL = "jdbc:mysql://localhost:" + dbPORT + "/" + dbNAME + "?" + TIMEZONE;
 			
+			String dbURL = "jdbc:mysql://localhost:" + dbPORT + "/" + dbNAME + "?" + TIMEZONE;
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPWD);
 		} catch (Exception e) {
