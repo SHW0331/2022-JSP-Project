@@ -1,0 +1,51 @@
+.index__search form {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#index__search__box {
+    width: 30%;
+    height: 15%;
+    
+    text-align: center;
+}
+
+#index__search__btn {
+    width: 10%;
+    height: 16.9%;
+
+    background-color: #00397C;
+    color: white;
+}
+
+
+/* input 검색어 hover */
+.index__search input::placeholder {              /* Chrome, Safari, Firefox */
+    color: #222;
+    opacity: 1;
+}
+.index__search input:-ms-input-placeholder {     /* IE, Edge */
+    color: #222;   
+    opacity: 1;
+}
+  /* old version */
+.index__search input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.index__search input:focus::-moz-placeholder {
+    color: transparent;
+}
+  
+.index__search input:focus:-ms-input-placeholder {
+    color: transparent;
+}
+  
+.index__search input:focus::-ms-input-placeholder {
+    color: transparent;
+}
