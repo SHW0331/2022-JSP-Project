@@ -16,7 +16,7 @@ public class BbsDAO {
 			String dbPORT = "3306";
 			String dbNAME = "league";
 			String TIMEZONE = "serverTimezone=UTC";
-			String dbURL = "jdbc:mysql//localhost:" + dbPORT + "/" + dbNAME + "?" + TIMEZONE;
+			String dbURL = "jdbc:mysql://localhost:" + dbPORT + "/" + dbNAME + "?" + TIMEZONE;
 
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
@@ -64,7 +64,6 @@ public class BbsDAO {
 			pstmt.setString(4, getDate());
 			pstmt.setString(5, bbsContent);
 			pstmt.setInt(6, 1);
-			rs = pstmt.executeQuery();
 			return pstmt.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

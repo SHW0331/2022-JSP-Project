@@ -47,7 +47,7 @@ request.setCharacterEncoding("utf-8");
 			} else {
 				PrintWriter script = response.getWriter();
 				script.println("<script>");
-				script.println("location.href = 'bbs.jsp'");
+				script.println("location.href = 'write.jsp'");
 				script.println("</script>");
 			}
 		}

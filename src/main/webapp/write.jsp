@@ -88,7 +88,7 @@
 								maxlength="50"></td>
 						</tr>
 						<tr>
-							<td><textarea name="" placeholder="글 내용" name="bbsContent"
+							<td><textarea placeholder="글 내용" name="bbsContent"
 									maxlength="2048"></textarea></td>
 						</tr>
 					</tbody>
