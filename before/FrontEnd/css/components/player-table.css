@@ -11,49 +11,49 @@ caption {
     display: none;
 }
 
-.team {
+.player {
 
 }
 
-.team__table {
+.player__table {
     width: 100%;
     border-top: 1px solid navy;
 }
 
-.team__table tr {
+.player__table tr {
     border-bottom: 1px solid #ccc;
 }
 
-.team__table thead tr {
+.player__table thead tr {
     background-color: #F0F0F0;
     font-weight: 600;
 }
 
-.team__table th,
-.team__table td {
+.player__table th,
+.player__table td {
     padding: 10px;
     font-size: 14px;
 }
 
-.team__table td {
+.player__table td {
     text-align: center;
 }
 
-.team__table .tit {
-    
+.player__table .tit {
+    text-align: left;
 }
 
-.team__table .tit:hover {
+.player__table .tit:hover {
     text-decoration: underline;
 }
 
-.team .paging {
+.player .paging {
     margin-top: 3%;
     text-align: center;
     font-size: 0;
 }
 
-.team .paging a {
+.player .paging a {
     display: inline-block;
     margin-left: 10px;
     padding: 10px 16px;
@@ -61,21 +61,21 @@ caption {
     font-size: 12px;
 }
 
-.team .paging a :first-child {
+.player .paging a :first-child {
     margin-left: 0;
 }
 
-.team .paging a.num {
+.player .paging a.num {
     border: 1px solid #000;
     font-weight: 600;
 }
 
-.team .paging a.write {
+.player .paging a.write {
     background: #eee;
     border: 1px solid black;
 }
 
-.team .paging a.num-on {
+.player .paging a.num-on {
     background: #001D49;
     border: 1px solid black;
     color: white;

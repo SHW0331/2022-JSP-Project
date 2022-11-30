@@ -77,7 +77,7 @@
 		<div class="board">
 			<table class="board__table">
 				<thead>
-					<tr class="board__table__thead__tr">
+					<tr>
 						<th>번호</th>
 						<th>제목</th>
 						<th>작성자</th>
@@ -85,19 +85,18 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr class="board__table__tbody__tr">
+					<tr>
 						<td>1</td>
-						<td>안녕하세요</td>
+						<td class="tit">안녕하세요</td>
 						<td>서해원</td>
 						<td>2022.11.30</td>
 					</tr>
-
 				</tbody>
 			</table>
-			<div class="page__bottom">
-				<span><a href="#">1</a></span> <span><a href="#">2</a></span> <span><a
-					href="#">3</a></span> <span><a href="#">4</a></span> <span><a
-					href="#">5</a></span> <span><a href="">글쓰기</a></span>
+			<div class="paging">
+				<a href="" class="num-on">1</a> <a href="" class="num">2</a> <a
+					href="" class="num">3</a> <a href="" class="num">4</a> <a href=""
+					class="num">5</a> <a href="" class="write">글쓰기</a>
 			</div>
 		</div>
 	</div>

@@ -75,50 +75,42 @@
 
 	<div class="main">
 		<div class="player">
-			<div class="player__top">
-				<table class="player__table">
-					<thead>
-						<tr>
-							<th class="player__table__th">순위</th>
-							<th class="player__table__th">선수 명</th>
-							<th class="player__table__th">팀</th>
-							<th class="player__table__th">포지션</th>
-							<th class="player__table__th">득점</th>
-							<th class="player__table__th">도움</th>
-							<th class="player__table__th">공격포인트</th>
-							<th class="player__table__th">슈팅</th>
-							<th class="player__table__th">출장</th>
-							<th class="player__table__th">교체</th>
-							<th class="player__table__th">경기당 기록</th>
-						</tr>
-					</thead>
-
-					<tbody>
-						<!--
-                    <tr>
-                        <td class="player__table__td">1</td>
-                        <td class="player__table__td">
-                          <a href="playerInfo.jsp">서해원</a>
-                        </td>
-                        <td class="player__table__td">서울FC</td>
-                        <td class="player__table__td">FW</td>
-                        <td class="player__table__td">1</td>
-                        <td class="player__table__td">1</td>
-                        <td class="player__table__td">1</td>
-                        <td class="player__table__td">1</td>
-                        <td class="player__table__td">1</td>
-                        <td class="player__table__td">1</td>
-                        <td class="player__table__td">0.5</td>
-                    </tr>
-                                    -->
-					</tbody>
-
-				</table>
-			</div>
-			<div class="page__bottom">
-				<span><a href="#">1</a></span> <span><a href="#">2</a></span> <span><a
-					href="#">3</a></span> <span><a href="#">4</a></span> <span><a
-					href="#">5</a></span>
+			<table class="player__table">
+				<thead>
+					<tr>
+						<th>순위</th>
+						<th>선수 명</th>
+						<th>팀</th>
+						<th>포지션</th>
+						<th>득점</th>
+						<th>도움</th>
+						<th>공격포인트</th>
+						<th>슈팅</th>
+						<th>출장</th>
+						<th>교체</th>
+						<th>경기당 기록</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td class="tit">서해원</td>
+						<td>서해원</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="paging">
+				<a href="" class="num-on">1</a> <a href="" class="num">2</a> <a
+					href="" class="num">3</a> <a href="" class="num">4</a> <a href=""
+					class="num">5</a> <a href="" class="write">글쓰기</a>
 			</div>
 		</div>
 	</div>

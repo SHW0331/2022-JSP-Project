@@ -40,7 +40,7 @@ caption {
 }
 
 .team__table .tit {
-    
+    text-align: left;
 }
 
 .team__table .tit:hover {

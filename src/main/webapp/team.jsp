@@ -78,45 +78,39 @@
 			<table class="team__table">
 				<thead>
 					<tr>
-						<th class="team__table__th">순위</th>
-						<th class="team__table__th">클럽</th>
-						<th class="team__table__th">경기</th>
-						<th class="team__table__th">승점</th>
-						<th class="team__table__th">승</th>
-						<th class="team__table__th">무</th>
-						<th class="team__table__th">패</th>
-						<th class="team__table__th">득점</th>
-						<th class="team__table__th">실점</th>
-						<th class="team__table__th">득실</th>
-						<th class="team__table__th">최근5경기</th>
+						<th>순위</th>
+						<th>클럽</th>
+						<th>경기</th>
+						<th>승점</th>
+						<th>승</th>
+						<th>무</th>
+						<th>패</th>
+						<th>득점</th>
+						<th>실점</th>
+						<th>득실</th>
+						<th>최근 5경기</th>
 					</tr>
 				</thead>
-
 				<tbody>
-					<!--
-                <tr>
-                    <td class="team__table__td">1</td>
-                    <td class="team__table__td">
-                      <a href="playerInfo.jsp">서해원</a>
-                    </td>
-                    <td class="team__table__td">서울FC</td>
-                    <td class="team__table__td">FW</td>
-                    <td class="team__table__td">1</td>
-                    <td class="team__table__td">1</td>
-                    <td class="team__table__td">1</td>
-                    <td class="team__table__td">1</td>
-                    <td class="team__table__td">1</td>
-                    <td class="team__table__td">1</td>
-                    <td class="team__table__td">0.5</td>
-                </tr>
-                                -->
+					<tr>
+						<td>1</td>
+						<td class="tit">홍대</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>1</td>
+						<td>승 승 승 패 무</td>
+					</tr>
 				</tbody>
-
 			</table>
-			<div class="page__bottom">
-				<span><a href="#">1</a></span> <span><a href="#">2</a></span> <span><a
-					href="#">3</a></span> <span><a href="#">4</a></span> <span><a
-					href="#">5</a></span> <span><a href="">글쓰기</a></span>
+			<div class="paging">
+				<a href="" class="num-on">1</a> <a href="" class="num">2</a> <a
+					href="" class="num">3</a> <a href="" class="num">4</a> <a href=""
+					class="num">5</a>
 			</div>
 		</div>
 	</div>
