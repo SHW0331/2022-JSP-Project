@@ -49,8 +49,8 @@
 					href="myInfo.jsp">내정보</a> <span
 					class="top-bar__login__column__right"> <a
 						href="logoutAction.jsp">로그아웃</a> <%
- 				}
- 				%>
+ }
+ %>
 			</div>
 		</div>
 	</div>
@@ -74,30 +74,27 @@
 	</div>
 
 	<div class="main">
-		<div class="board">
-			<table class="board__table">
-				<thead>
-					<tr>
-						<th>번호</th>
-						<th>제목</th>
-						<th>작성자</th>
-						<th>작성일</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>1</td>
-						<td class="tit">안녕하세요</td>
-						<td>서해원</td>
-						<td>2022.11.30</td>
-					</tr>
-				</tbody>
-			</table>
-			<div class="paging">
-				<a href="" class="num-on">1</a> <a href="" class="num">2</a> <a
-					href="" class="num">3</a> <a href="" class="num">4</a> <a href=""
-					class="num">5</a> <a href="write.jsp" class="write">글쓰기</a>
-			</div>
+		<div class="write">
+			<form action="writeAction.jsp" method="post">
+				<table class="write__table">
+					<thead>
+						<tr>
+							<th>게시판 글쓰기</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="text" placeholder="글 제목" name="bbsTitle"
+								maxlength="50"></td>
+						</tr>
+						<tr>
+							<td><textarea name="" placeholder="글 내용" name="bbsContent"
+									maxlength="2048"></textarea></td>
+						</tr>
+					</tbody>
+				</table>
+				<input type="submit" value="글쓰기" class="wirte__btn">
+			</form>
 		</div>
 	</div>
 

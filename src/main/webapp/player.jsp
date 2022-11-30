@@ -110,7 +110,7 @@
 			<div class="paging">
 				<a href="" class="num-on">1</a> <a href="" class="num">2</a> <a
 					href="" class="num">3</a> <a href="" class="num">4</a> <a href=""
-					class="num">5</a> <a href="" class="write">글쓰기</a>
+					class="num">5</a>
 			</div>
 		</div>
 	</div>

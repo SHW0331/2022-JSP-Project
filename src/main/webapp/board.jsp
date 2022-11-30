@@ -96,7 +96,7 @@
 			<div class="paging">
 				<a href="" class="num-on">1</a> <a href="" class="num">2</a> <a
 					href="" class="num">3</a> <a href="" class="num">4</a> <a href=""
-					class="num">5</a> <a href="write.jsp" class="write">글쓰기</a>
+					class="num">5</a> <a href="write.jsp" class="board__btn">글쓰기</a>
 			</div>
 		</div>
 	</div>

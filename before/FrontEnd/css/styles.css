@@ -22,6 +22,9 @@
 @import "./components/board-table.css";
 @import "./components/page-bottom.css";
 
+@import "./components/write.css";
+@import "./components/write-table.css";
+
 /* Screens */
 
 

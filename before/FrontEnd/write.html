@@ -42,40 +42,34 @@
 
 <div class="info-bar">
     <div class="info-bar__column">
-        <span>게시판 화면</span>
+        <span>글쓰기 화면</span>
         <span>K리그의 선수, 팀 평가를 할 수 있는 공간입니다.</span>
     </div>
 </div>
 
 <div class="main">
-  <div class="board">
-    <table class="board__table">
-      <thead>
-        <tr>
-          <th>번호</th>
-          <th>제목</th>
-          <th>작성자</th>
-          <th>작성일</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td class="tit">안녕하세요</td>
-          <td>서해원</td>
-          <td>2022.11.30</td>
-        </tr>      
-      </tbody>
-    </table>
-    <div class="paging">
-      <a href="" class="num-on">1</a>
-      <a href="" class="num">2</a>
-      <a href="" class="num">3</a>
-      <a href="" class="num">4</a>
-      <a href="" class="num">5</a>
-      <a href="write.html" class="board__btn">글쓰기</a>
-   </div>
-  </div>
+    <div class="write">
+        <form action="writeAction.jsp" method="post">
+            <table class="write__table">
+                <thead>
+                  <tr>
+                    <th>게시판 글쓰기</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><input type="text" placeholder="글 제목" name="bbsTitle"
+                        maxlength="50"></td>
+                  </tr>
+                  <tr>
+                    <td><textarea name="" placeholder="글 내용" name="bbsContent"
+                        maxlength="2048"></textarea></td>
+                  </tr>      
+                </tbody>
+              </table>
+              <input type="submit" value="글쓰기" class="wirte__btn">
+        </form>
+    </div>
 </div>
 
 

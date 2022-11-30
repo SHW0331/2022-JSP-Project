@@ -1,19 +1,4 @@
-* {
-    margin: 0;
-    padding: 0;
-}
 
-table {
-    border-collapse: collapse;
-}
-
-caption {
-    display: none;
-}
-
-.board {
-
-}
 
 .board__table {
     width: 100%;
@@ -70,7 +55,7 @@ caption {
     font-weight: 600;
 }
 
-.board .paging a.write {
+.board .paging a.board__btn {
     background: #eee;
     border: 1px solid black;
 }
