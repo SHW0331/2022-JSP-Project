@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter"%>
-<%@ page import = "bbs.Bbs" %>
-<%@ page import = "bbs.BbsDAO" %>
+<%@ page import="bbs.Bbs"%>
+<%@ page import="bbs.BbsDAO"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,14 +30,14 @@
 	}
 	int bbsID = 0;
 	if (request.getParameter("bbsID") != null) {
-		bbsID = Integer.parseInt(request.getParameter("bbsID"));
+	bbsID = Integer.parseInt(request.getParameter("bbsID"));
 	}
 	if (bbsID == 0) {
-		PrintWriter script = response.getWriter();
-		script.println("<script>");
-		script.println("alert('유효하지 않은 글입니다.')");
-		script.println("loaction.href = 'bbs.jsp'");
-		script.println("</script>");
+	PrintWriter script = response.getWriter();
+	script.println("<script>");
+	script.println("alert('유효하지 않은 글입니다.')");
+	script.println("loaction.href = 'bbs.jsp'");
+	script.println("</script>");
 	}
 	Bbs bbs = new BbsDAO().getBbs(bbsID);
 	%>
@@ -89,27 +89,35 @@
 	</div>
 
 	<div class="main">
-		<div class="write">
-			<form action="writeAction.jsp" method="post">
-				<table class="write__table">
-					<thead>
-						<tr>
-							<th>게시판 글쓰기</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td><input type="text" placeholder="글 제목" name="bbsTitle"
-								maxlength="50"></td>
-						</tr>
-						<tr>
-							<td><textarea placeholder="글 내용" name="bbsContent"
-									maxlength="2048"></textarea></td>
-						</tr>
-					</tbody>
-				</table>
-				<input type="submit" value="글쓰기" class="write__submit">
-			</form>
+		<div class="view">
+			<table class="view__table">
+				<thead>
+					<tr>
+						<th>게시판 글쓰기</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>글 제목</td>
+						<td><%=bbs.getBbsTitle()%></td>
+					</tr>
+					<tr>
+						<td>작성자</td>
+						<td><%=bbs.getUserID()%></td>
+					</tr>
+					<tr>
+						<td>작성일자</td>
+						<td><%=bbs.getBbsDate().substring(0, 11) + bbs.getBbsDate().substring(11, 13) + "시"
+		+ bbs.getBbsDate().substring(14, 16) + "분"%></td>
+					</tr>
+					<tr>
+						<td><%=bbs.getBbsContent()%></td>
+					</tr>
+				</tbody>
+			</table>
+			<div class="view__btn">
+				<a href="">목록</a> <a href="">수정</a> <a href="">삭제</a>
+			</div>
 		</div>
 	</div>
 
