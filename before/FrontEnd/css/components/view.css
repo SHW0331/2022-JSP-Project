@@ -85,7 +85,13 @@
     align-items: center;
 }
 
-.view__btn input {
+.view__btn a {
     width: 10%;
     height: 60%;
+
+    border: 1px solid #CCCCCC;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
