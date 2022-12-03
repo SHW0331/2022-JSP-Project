@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="java.io.PrintWriter"%>
+<%@ page import = "bbs.Bbs" %>
+<%@ page import = "bbs.BbsDAO" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,6 +28,18 @@
 	</script>
 	<%
 	}
+	int bbsID = 0;
+	if (request.getParameter("bbsID") != null) {
+		bbsID = Integer.parseInt(request.getParameter("bbsID"));
+	}
+	if (bbsID == 0) {
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("alert('유효하지 않은 글입니다.')");
+		script.println("loaction.href = 'bbs.jsp'");
+		script.println("</script>");
+	}
+	Bbs bbs = new BbsDAO().getBbs(bbsID);
 	%>
 
 	<div class="top-bar">
