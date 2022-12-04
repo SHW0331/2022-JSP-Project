@@ -103,7 +103,7 @@
 						<td><%=list.get(i).getBbsID()%></td>
 						<td>
 							<a href="view.jsp?bbsID=<%=list.get(i).getBbsID()%>">
-							<%=list.get(i).getBbsTitle()%></a>
+							<%=list.get(i).getBbsTitle().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>")%></a>
 						</td>
 						<td><%=list.get(i).getUserID()%></td>
 						<td><%=list.get(i).getBbsDate().substring(0, 11) 
@@ -132,15 +132,6 @@
 			</div>
 		</div>
 	</div>
-	
-	         <div class="paging">
-            <a href="" class="num-on">1</a> <a href="" class="num">2</a> <a
-               href="" class="num">3</a> <a href="" class="num">4</a> <a href=""
-               class="num">5</a> 
-         </div>
-
-
-
 	<footer class="bottom-bar">
 		<a href="index.jsp"> <img src="./css/img/foot_logo.png"
 			alt="K리그 투명로고">

@@ -85,16 +85,25 @@
 					<span> K리그 검색</span>
 				</div>
 				<div class="index__search">
-					<form action="" method="get">
-						<input id="index__search__box" type="text"
-							placeholder="팀명.. 선수명.." autocomplete="off"> <input
-							id="index__search__btn" type="submit" value="Search"
-							autocomplete="off">
+					<form action="#" method="post">
+						<table>
+							<tr>
+								<td><select name="searchField">
+										<option value="team">팀</option>
+										<option value="playerName">선수</option>
+								</select></td>
+								<td><input class="searchInput" type="text"
+									placeholder="검색어 입력(아직 선수 DB는 100명밖에 없습니다.)" name=""
+									maxlength="100"></td>
+								<td><input type="submit" value="검색" class=""></td>
+							</tr>
+						</table>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
+
 
 
 	<footer class="bottom-bar">

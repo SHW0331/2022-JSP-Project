@@ -58,7 +58,8 @@
 }
 
 .write tbody tr:first-child td input {
-    width: 50%;
+    padding-left: 1%;
+    width: 49%;
     height: 50%;
 }
 

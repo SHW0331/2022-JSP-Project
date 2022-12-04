@@ -36,7 +36,7 @@
 	PrintWriter script = response.getWriter();
 	script.println("<script>");
 	script.println("alert('유효하지 않은 글입니다.')");
-	script.println("loaction.href = 'bbs.jsp'");
+	script.println("loaction.href = 'board.jsp'");
 	script.println("</script>");
 	}
 	Bbs bbs = new BbsDAO().getBbs(bbsID);
@@ -99,7 +99,7 @@
 				<tbody>
 					<tr>
 						<td>글 제목</td>
-						<td><%=bbs.getBbsTitle()%></td>
+						<td><%=bbs.getBbsTitle().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %></td>
 					</tr>
 					<tr>
 						<td>작성자</td>
@@ -111,12 +111,22 @@
 		+ bbs.getBbsDate().substring(14, 16) + "분"%></td>
 					</tr>
 					<tr>
-						<td><%=bbs.getBbsContent()%></td>
+						<td>
+						<%=bbs.getBbsContent().replaceAll(" ", "&nbsp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll("\n", "<br>") %>
+						</td>
 					</tr>
 				</tbody>
 			</table>
 			<div class="view__btn">
-				<a href="">목록</a> <a href="">수정</a> <a href="">삭제</a>
+				<a href="board.jsp">목록</a> 
+			<%
+				if(userID != null & userID.equals(bbs.getUserID())) {
+			%> 
+				<a href="update.jsp?bbsID=<%= bbsID %>">수정</a> 
+				<a href="deleteAction.jsp?bbsID=<%= bbsID %>">삭제</a>
+			<%
+				}
+			%>
 			</div>
 		</div>
 	</div>

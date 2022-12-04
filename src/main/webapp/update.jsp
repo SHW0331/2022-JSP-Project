@@ -1,9 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter"%>
-<%@ page import="player.PlayerDAO"%>
-<%@ page import="player.Player"%>
-<%@ page import="java.util.ArrayList"%>
+<%@ page import="bbs.Bbs"%>
+<%@ page import="bbs.BbsDAO"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,20 +20,35 @@
 	String userID = null;
 	if (session.getAttribute("userID") != null) {
 		userID = (String) session.getAttribute("userID");
-	} else {
-	%>
-	<script>
-		alert("로그인이 필요합니다.")
-		location.href = 'login.jsp';
-	</script>
-	<%
 	}
-	int pageNumber = 1;
-	if (request.getParameter("pageNumber") != null) {
-	pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
+	if (userID == null) {
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("alert('로그인이 필요합니다.')");
+		script.println("loaction.href = 'board.jsp'");
+		script.println("</script>");
+	}
+	int bbsID = 0;
+	if (request.getParameter("bbsID") != null) {
+		bbsID = Integer.parseInt(request.getParameter("bbsID"));
+	}
+	if (bbsID == 0) {
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("alert('유효하지 않은 글입니다.')");
+		script.println("loaction.href = 'board.jsp'");
+		script.println("</script>");
+	}
+	Bbs bbs = new BbsDAO().getBbs(bbsID);
+	if (!userID.equals(bbs.getUserID())) {
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("alert('권한이 없습니다.')");
+		script.println("loaction.href = 'board.jsp'");
+		script.println("</script>");
+	}
+	%>
 
-	}
-	%>
 	<div class="top-bar">
 		<div class="top-bar__logo">
 			<a href="index.jsp"> <img class="top-bar__logo__svg"
@@ -77,52 +91,35 @@
 
 	<div class="info-bar">
 		<div class="info-bar__column">
-			<span>선수 기록</span> <span>K리그의 선수 순위, 기록, 데이터를 확인할 수 있는 공간입니다.</span>
+			<span>게시판 화면</span> <span>K리그의 선수, 팀 평가를 할 수 있는 공간입니다.</span>
 		</div>
 	</div>
 
 	<div class="main">
-		<div class="player">
-			<table class="player__table">
-				<thead>
-					<tr>
-						<th>순서</th>
-						<th>이름</th>
-						<th>소속구단</th>
-						<th>포지션</th>
-						<th>배번</th>
-						<th>국적</th>
-						<th>키</th>
-						<th>몸무게</th>
-						<th>생년월일</th>
-						<th>리그</th>
-					</tr>
-				</thead>
-				<tbody>
-					<%
-					PlayerDAO playerDAO = new PlayerDAO();
-					ArrayList<Player> list = playerDAO.getList();
-					for(int i=0; i<list.size(); i++) {
-					%>
-					<tr>
-						<td><%=i+1%></td>
-						<td class="tit"><%=list.get(i).getPlayerName()%></td>
-						<td><%=list.get(i).getTeam()%></td>
-						<td><%=list.get(i).getPosition()%></td>
-						<td><%=list.get(i).getBacknumber()%></td>
-						<td><%=list.get(i).getNational()%></td>
-						<td><%=list.get(i).getHeight()%></td>
-						<td><%=list.get(i).getWeight()%></td>
-						<td><%=list.get(i).getBirth()%></td>
-						<td><%=list.get(i).getLeaguetype()%></td>
-					</tr>
-					<%
-					}
-					%>
-				</tbody>
-			</table>
+		<div class="write">
+			<form action="updateAction.jsp?bbsID=<%=bbsID%>" method="post">
+				<table class="write__table">
+					<thead>
+						<tr>
+							<th>게시판 글 수정</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><input type="text" placeholder="글 제목" name="bbsTitle"
+								maxlength="50" value="<%=bbs.getBbsTitle()%>"></td>
+						</tr>
+						<tr>
+							<td><textarea placeholder="글 내용" name="bbsContent"
+									maxlength="2048"><%=bbs.getBbsContent()%></textarea></td>
+						</tr>
+					</tbody>
+				</table>
+				<input type="submit" value="글쓰기" class="write__submit">
+			</form>
 		</div>
 	</div>
+
 
 
 	<footer class="bottom-bar">
