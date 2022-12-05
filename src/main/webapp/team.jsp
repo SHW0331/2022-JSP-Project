@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="java.io.PrintWriter"%>
+<%@ page import="club.ClubDAO"%>
+<%@ page import="club.Club"%>
+<%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -92,19 +96,28 @@
 					</tr>
 				</thead>
 				<tbody>
+					<%
+					ClubDAO clubDAO = new ClubDAO();
+					ArrayList<Club> list = clubDAO.getList();
+					for(int i=0; i<list.size(); i++) {
+					%>
 					<tr>
-						<td>1</td>
-						<td class="tit">홍대</td>
-						<td>1</td>
-						<td>1</td>
-						<td>1</td>
-						<td>1</td>
-						<td>1</td>
-						<td>1</td>
-						<td>1</td>
-						<td>1</td>
-						<td>승 승 승 패 무</td>
+						<td class="tit"><%=list.get(i).getClubRank()%></td>
+						<td><%=list.get(i).getClubName()%></td>
+						<td><%=list.get(i).getClubMatch()%></td>
+						<td><%=list.get(i).getPts()%></td>
+						<td><%=list.get(i).getWin()%></td>
+						<td><%=list.get(i).getDraw()%></td>
+						<td><%=list.get(i).getLose()%></td>
+						<td><%=list.get(i).getGf()%></td>
+						<td><%=list.get(i).getGa()%></td>
+						<td><%=list.get(i).getGd()%></td>
+						<td><%=list.get(i).getRecent()%></td>
+						<td><%=list.get(i).getLeaguetype()%></td>
 					</tr>
+					<%
+					}
+					%>
 				</tbody>
 			</table>
 		</div>

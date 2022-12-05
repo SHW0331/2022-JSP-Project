@@ -93,7 +93,7 @@
 										<option value="playerName">선수</option>
 								</select></td>
 								<td><input class="searchInput" type="text"
-									placeholder="검색어 입력(아직 선수 DB는 100명밖에 없습니다.)" name=""
+									placeholder="검색어 입력" name=""
 									maxlength="100"></td>
 								<td><input type="submit" value="검색" class=""></td>
 							</tr>
