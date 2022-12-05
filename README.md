@@ -10,9 +10,9 @@
     - **HTML**
     - **CSS**
 - **Back - End**
-    - ??
+    - **JSP**
 - **Database**
-    - **Oracle, MySQL**
+    - **MySQL**
 - **Version Control**
     - **Git & Github**
 
