@@ -1,0 +1,45 @@
+create table user (
+	userID VARCHAR(20),
+    userPassword VARCHAR(20),
+    userNAME VARCHAR(20),
+    userGender VARCHAR(20),
+    userEmail VARCHAR(50),
+    PRIMARY KEY (userID)
+);
+
+CREATE TABLE player(
+    playerName VARCHAR(100) NOT NULL,
+    team VARCHAR(100),
+    position VARCHAR(30),
+    backnumber VARCHAR(30),
+	national VARCHAR(100),
+    height VARCHAR(30),
+    weight VARCHAR(30),
+    birth VARCHAR(50),
+    leaguetype VARCHAR(30) NOT NULL
+);
+
+CREATE TABLE club (
+    clubRank VARCHAR(20),
+    clubName VARCHAR(50),
+    clubmatch VARCHAR(20),
+    pts VARCHAR(20),
+	win VARCHAR(20),
+    draw VARCHAR(20),
+    lose VARCHAR(30),
+    gf VARCHAR(20),
+	ga VARCHAR(20),
+	gd VARCHAR(20),
+    recent VARCHAR(50),
+    leaguetype VARCHAR(50)
+);
+
+create table bbs (
+	bbsID INT,
+    bbsTitle VARCHAR(50),
+    userID VARCHAR(20),
+    bbsDate DATETIME,
+    bbsContent VARCHAR(2048),
+    bbsAvailable INT,
+    PRIMARY KEY (bbsID)
+);

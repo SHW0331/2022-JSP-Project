@@ -4,8 +4,10 @@
 <%@ page import="player.PlayerDAO"%>
 <%@ page import="player.Player"%>
 <%@ page import="java.util.ArrayList"%>
+<% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <script src="https://kit.fontawesome.com/60c73f104d.js"
 	crossorigin="anonymous"></script>
@@ -27,6 +29,11 @@
 		location.href = 'login.jsp';
 	</script>
 	<%
+	}
+	int pageNumber = 1;
+	if (request.getParameter("pageNumber") != null) {
+	pageNumber = Integer.parseInt(request.getParameter("pageNumber"));
+
 	}
 	%>
 
@@ -72,44 +79,59 @@
 
 	<div class="info-bar">
 		<div class="info-bar__column">
-			<span>홈 화면</span> <span>K리그의 선수 순위, 기록, 데이터 등을 검색 할 수 있는
-				공간입니다.</span>
+			<span>선수 기록</span> <span>K리그의 선수 순위, 기록, 데이터를 확인할 수 있는 공간입니다.</span>
 		</div>
 	</div>
-
+	
 	<div class="main">
-		<div class="index">
-			<div class="index__left">
-				<video muted autoplay loop>
-					<source src="./css/img/bg.mp4" type="video/mp4">
-				</video>
-			</div>
-			<div class="index__right">
-				<div class="index__title">
-					<span> K리그 검색</span>
-				</div>
-				<div class="index__search">
-					<form action="search.jsp" method="post">
-						<table>
-							<tr>
-								<td><select name="searchField">
-										<option value="playerName">선수</option>
-										<option value="team">팀</option>
-								</select></td>
-								<td><input type="text"
-									placeholder="검색어 입력" name="searchText"
-									maxlength="100"></td>
-								<td><input type="submit" value="검색"></td>
-							</tr>
-						</table>
-					</form>
-				</div>
-			</div>
+		<div class="player">
+			<table class="player__table">
+				<thead>
+					<tr>
+						<th>순서</th>
+						<th>이름</th>
+						<th>소속구단</th>
+						<th>포지션</th>
+						<th>배번</th>
+						<th>국적</th>
+						<th>키</th>
+						<th>몸무게</th>
+						<th>생년월일</th>
+						<th>리그</th>
+					</tr>
+				</thead>
+				<tbody>
+					<%
+					PlayerDAO playerDAO = new PlayerDAO();
+					ArrayList<Player> list = playerDAO.getSearch(request.getParameter("searchField"), request.getParameter("searchText"));
+					if (list.size() == 0) {
+						PrintWriter script = response.getWriter();
+						script.println("<script>");
+						script.println("alert('검색결과가 없습니다.')");
+						script.println("history.back()");
+						script.println("</script>");
+					}
+					for (int i = 0; i < list.size(); i++) {
+					%>
+					<tr>
+						<td><%=i+1%></td>
+						<td class="tit"><%=list.get(i).getPlayerName()%></td>
+						<td><%=list.get(i).getTeam()%></td>
+						<td><%=list.get(i).getPosition()%></td>
+						<td><%=list.get(i).getBacknumber()%></td>
+						<td><%=list.get(i).getNational()%></td>
+						<td><%=list.get(i).getHeight()%></td>
+						<td><%=list.get(i).getWeight()%></td>
+						<td><%=list.get(i).getBirth()%></td>
+						<td><%=list.get(i).getLeaguetype()%></td>
+					</tr>
+					<%
+					}
+					%>
+				</tbody>
+			</table>
 		</div>
 	</div>
-
-
-
 	<footer class="bottom-bar">
 		<a href="index.jsp"> <img src="./css/img/foot_logo.png"
 			alt="K리그 투명로고">

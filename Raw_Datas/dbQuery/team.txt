@@ -1,3 +1,4 @@
+순위 클럽   경기 승점 승 무 패   득점  실점 득실    최근5경기   리그
 INSERT INTO club VALUES('1', '울산', '19', '40', '12', '4', '3', '31', '17', '14', '패 승 승 패 승', 'kleague1');
 INSERT INTO club VALUES('2', '전북', '19', '32', '8', '8', '3', '23', '18', '5', '승 승 승 승 무', 'kleague1');
 INSERT INTO club VALUES('3', '포항', '18', '33', '9', '6', '3', '26', '14', '12', '승 무 패 승 무', 'kleague1');
@@ -10,14 +11,15 @@ INSERT INTO club VALUES('9', '서울', '19', '23', '6', '5', '8', '24', '25', '-
 INSERT INTO club VALUES('10', '수원', '20', '25', '6', '7', '7', '24', '22', '2', '승 패 무 패 패', 'kleague1');
 INSERT INTO club VALUES('11', '김천', '19', '20', '5', '5', '9', '22', '24', '-2', '패 무 승 패 무', 'kleague1');
 INSERT INTO club VALUES('12', '성남', '19', '15', '3', '6', '10', '20', '40', '-20', '무 패 무 패 승', 'kleague1');
-INSERT INTO club VALUES('1', '광주', '20', '50', '16', '2', '2', '35', '13', '22', '승 승 승 승 무', 'kleague2');
-INSERT INTO club VALUES('2', '대전', '20', '43', '12', '7', '1', '44', '24', '20', '승 무 승 무 승', 'kleague2');
-INSERT INTO club VALUES('3', '안양', '21', '39', '11', '7', '3', '29', '17', '12', '무 승 승 패 패', 'kleague2');
-INSERT INTO club VALUES('4', '경남', '20', '33', '10', '3', '7', '32', '25', '7', '승 승 패 승 승', 'kleague2');
-INSERT INTO club VALUES('5', '부천', '21', '39', '11', '6', '4', '31', '19', '12', '패 무 패 무 승', 'kleague2');
-INSERT INTO club VALUES('6', '충남아산', '20', '33', '9', '6', '5', '20', '17', '3', '무 승 무 패 승', 'kleague2');
-INSERT INTO club VALUES('7', '서울E', '20', '29', '7', '8', '5', '30', '24', '6', '패 승 승 패 승', 'kleague2');
-INSERT INTO club VALUES('8', '김포', '20', '19', '4', '7', '9', '16', '32', '-16', '패 승 무 패 패', 'kleague2');
-INSERT INTO club VALUES('9', '안산', '20', '18', '4', '6', '10', '27', '35', '-8', '패 무 패 승 무', 'kleague2');
-INSERT INTO club VALUES('10', '부산', '20', '22', '6', '4', '10', '19', '25', '-6', '승 패 승 패 승', 'kleague2');
-INSERT INTO club VALUES('11', '전남', '20', '19', '3', '10', '7', '22', '25', '-3', '승 패 무 패 패', 'kleague2');
+
+INSERT INTO club VALUES('1', '광주', '20', '50', '16', '2', '2', '35', '13', '22', '승 승 승 승 무', 'kleague2
+INSERT INTO club VALUES('2', '대전', '20', '43', '12', '7', '1', '44', '24', '20', '승 무 승 무 승', 'kleague2
+INSERT INTO club VALUES('3', '안양', '21', '39', '11', '7', '3', '29', '17', '12', '무 승 승 패 패', 'kleague2
+INSERT INTO club VALUES('4', '경남', '20', '33', '10', '3', '7', '32', '25', '7', '승 승 패 승 승', 'kleague2
+INSERT INTO club VALUES('5', '부천', '21', '39', '11', '6', '4', '31', '19', '12', '패 무 패 무 승', 'kleague2
+INSERT INTO club VALUES('6', '충남아산', '20', '33', '9', '6', '5', '20', '17', '3', '무 승 무 패 승', 'kleague2
+INSERT INTO club VALUES('7', '서울E', '20', '29', '7', '8', '5', '30', '24', '6', '패 승 승 패 승', 'kleague2
+INSERT INTO club VALUES('8', '김포', '20', '19', '4', '7', '9', '16', '32', '-16', '패 승 무 패 패', 'kleague2
+INSERT INTO club VALUES('9', '안산', '20', '18', '4', '6', '10', '27', '35', '-8', '패 무 패 승 무', 'kleague2
+INSERT INTO club VALUES('10', '부산', '20', '22', '6', '4', '10', '19', '25', '-6', '승 패 승 패 승', 'kleague2
+INSERT INTO club VALUES('11', '전남', '20', '19', '3', '10', '7', '22', '25', '-3', '승 패 무 패 패', 'kleague2
