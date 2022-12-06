@@ -1,0 +1,27 @@
+package user;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class UserDAO {
+	private Connection conn;
+	private PreparedStatement pstmt;
+	private ResultSet rs;
+	
+	public UserDAO() {
+		try {
+			String dbID = "root";
+			String dbPWD = "1542684";
+			String dbPORT = "3306";
+			String dbNAME = "league";
+			String TIMEZONE = "serverTimezone=UTC";
+			String dbURL = "jdbc:mysql://localhost" + dbPORT + "/" + dbNAME + "?" + TIMEZONE;
+			
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = DriverManager.getConnection(dbURL, dbID, dbPWD);
+		} catch(Exception e) {
+			
+		}
+	}
+}

@@ -1,0 +1,12 @@
+package user;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+
+public class UserDAO {
+	private Connection conn;
+	private PreparedStatment pstmt;
+	private ResultSet rs;
+	
+	
+}

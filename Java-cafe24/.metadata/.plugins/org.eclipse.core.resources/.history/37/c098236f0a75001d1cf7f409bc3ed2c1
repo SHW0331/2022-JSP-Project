@@ -1,0 +1,27 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<%@ page errorPage="errorpg.jsp"
+import="java.sql.*,
+javax.sql.*,
+java.io.*" %>
+</head>
+<body>
+<h1>JDBC Test</h1>
+
+<%
+Class.forName("com.mysql.jdbc.Driver");
+Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/sywok0331", "sywok0331" , "TG1542684");
+Statement stmt = conn.createStatement();
+ResultSet rset = stmt.executeQuery("query");
+while (rset.next()) {
+	
+}
+rset.close();
+stmt.close();
+conn.close();
+%>
+</body>
+</html>
