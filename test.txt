@@ -6,3 +6,34 @@ deb http://archive.ubuntu.com/ubuntu/ focal universe
 
 deb http://ftp.daumkakao.com/ubuntu/ focal restricted
 deb http://archive.ubuntu.com/ubuntu/ focal restricted
+
+
+[BaseOS]
+name=CentOS-$releasever - BaseOS
+baseurl=http://mirror.centos.org/centos/$releasever/BaseOS/$basearch/
+gpgcheck=0
+enabled=1
+
+[AppStream]
+name=CentOS-$releasever - AppStream
+baseurl=http://mirror.centos.org/centos/$releasever/AppStream/$basearch/
+gpgcheck=0
+enabled=1
+
+[extras]
+name=CentOS-$releasever - Extras
+baseurl=http://mirror.centos.org/centos/$releasever/extras/$basearch/
+gpgcheck=0
+enabled=1
+
+[centosplus]
+name=CentOS-$releasever - Plus
+baseurl=http://mirror.centos.org/centos/$releasever/centosplus/$basearch/
+gpgcheck=0
+enabled=1
+
+[powerTools]
+name=CentOS-$releasever - PowerTools
+baseurl=http://mirror.centos.org/centos/$releasever/powertools/$basearch/
+gpgcheck=0
+enabled=1
