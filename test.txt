@@ -55,6 +55,17 @@ $template remote-incoming-logs,"/var/log/.log"192.168.10.0/client.log
 
 
 
+# 시스템 2 (zeep) - 10-remote-apache.conf
+$ModLoad imfile
+$InputFilePollInterval 10
+$InputFileStateFile state_apache
+$InputFileName /var/log/apache/access.log
+$InputFileTag apache
+$InputFileFacility local0
+$InputRunFileMonitor
+$InputFilePersistStateInterval 20000
+$InputFileSeverity info
+if $programname == 'apache' then @@192.168.10.10:514;RSYSLOG_SyslogProtocol23Format
 
 
 
